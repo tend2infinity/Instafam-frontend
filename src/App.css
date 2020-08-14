@@ -20,6 +20,12 @@ a{
     border-bottom: 1px solid rgb(20, 205, 238)  !important;
     box-shadow: 0 1px 0 0 rgb(20, 205, 238)  !important;
 }
+.input-field input[type=password]:focus {
+    border-bottom: 1px solid rgb(20, 205, 238)  !important;
+    box-shadow: 0 1px 0 0 rgb(20, 205, 238)  !important;
+}
+
+
 .gallery{
     display:flex;
     flex-wrap:wrap;
