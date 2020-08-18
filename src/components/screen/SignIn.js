@@ -46,7 +46,7 @@ const SignIn = ()=>{
     return (
         <div className="mycard">
             <div className="card auth-card input-field">
-                <h2>Instafam</h2>
+                <h2 className="instafamheading">Instafam</h2>
                 <input
                 type='text'
                 placeholder='email'

@@ -2,6 +2,7 @@
 
 a{
     color: black !important;
+    font-family: 'Alata', sans-serif;
 }
 
 .brand-logo,h2{
@@ -36,9 +37,10 @@ a{
     width:30%;
 }
 .home-card{
-    max-width: 500px;
+    max-width: 650px;
     height: max-content;
     margin: 26px auto;
+    /* border : 2px solid black */
 }
 
 
@@ -47,3 +49,35 @@ a{
     right:20px !important;
     left: auto !important;
 }
+.material-icons:hover{
+    cursor:pointer;
+    text-shadow: 2px 2px 2px rgb(50, 116, 240);
+
+}
+
+.collection-item{
+    width: 100%;
+}
+.btn {
+    border-radius : 4px ;
+    transition-duration : 0.5s;
+    opacity: 0.9;
+
+}
+
+.btn:hover {
+    background-color : rgb(15, 69, 219) !important;
+    color : white;
+}
+.brand-logo{
+    font-size:32px !important;
+}
+.brand-logo:hover {
+    text-shadow: 2px 3px 5px rgb(50, 116, 240);
+  }
+
+
+.instafamheading{
+    text-shadow: 8px 8px 8px rgb(50, 116, 240);
+}
+

@@ -8,7 +8,8 @@ import Profile from './components/screen/Profile';
 import Signup from './components/screen/Signup';
 import CreatePost from './components/screen/CreatePost';
 import UserProfile from './components/screen/UserProfile';
-import {reducer,initialState} from './reducers/userReducer'
+import {reducer,initialState} from './reducers/userReducer';
+import Allfollowpost from './components/screen/Allfollowpost'
 
 export const UserContext = createContext()
 
@@ -44,6 +45,9 @@ const Routing = () =>{
      </Route>
       <Route path="/profile/:userid" >
        <UserProfile />
+     </Route>
+     <Route path="/allfollowpost" >
+       <Allfollowpost />
      </Route>
     </Switch>
   )

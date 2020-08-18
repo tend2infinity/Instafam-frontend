@@ -1,4 +1,4 @@
-import React,{useState} from 'react';
+import React,{useState,useEffect} from 'react';
 import {Link,useHistory } from 'react-router-dom';
 import M from 'materialize-css'
 
@@ -8,7 +8,33 @@ const Signup = ()=>{
     const [name,setName] = useState("")
     const [password,setPassword] = useState("")
     const[email,setEmail] = useState("")
-    const PostData = () =>{
+    const [image,setImage] = useState("")
+    const [url,setUrl] = useState(undefined)
+    useEffect(()=>{
+        if(url){
+            Fielddata()
+        }
+    })
+
+    const uploadProfilepic = ()=>{
+        const data = new FormData()
+        data.append("file",image)
+        data.append("upload_preset","Instafam")
+        data.append("cloud_name","abcd1234huy")
+        fetch("https://api.cloudinary.com/v1_1/abcd1234huy/image/upload",{
+            method:"post",
+            body:data
+        })
+        .then(res=>res.json())
+        .then(data=>{
+            setUrl(data.url)
+        })
+        .catch(err=>{
+            console.log(err)
+        })
+       
+      }
+      const Fielddata = () =>{
         if(!/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email))
         {
              M.toast({html:"invalid Email" , classes:"#43a047 red darken-1"})
@@ -22,7 +48,8 @@ const Signup = ()=>{
           body:JSON.stringify({
               name,
               password,
-              email
+              email,
+              pic:url
           }) 
         }).then(res=>res.json())
         .then(data=>{
@@ -38,10 +65,19 @@ const Signup = ()=>{
             console.log(err)
         })
     }
+    
+    const PostData = () =>{
+        if(image){
+            uploadProfilepic()
+        }else{
+            Fielddata() 
+        }
+       
+    }
     return (
         <div className="mycard">
             <div className="card auth-card input-field">
-                <h2>Instafam</h2>
+                <h2 className="instafamheading">Instafam</h2>
                 <input
                 type='text'
                 placeholder='name'
@@ -60,6 +96,17 @@ const Signup = ()=>{
                 value={password}
                 onChange={(e)=>setPassword(e.target.value)}
                 />
+
+            <div className="file-field input-field">
+            <div className="btn waves-effect waves-light #64b5f6 blue darken-1">
+                <span>Upload Profile Picture</span>
+                <input type="file" onChange={(e)=>setImage(e.target.files[0])} />
+            </div>
+            <div className="file-path-wrapper">
+                <input className="file-path validate" type="text" />
+
+            </div>
+            </div>
                 
             <button className="btn waves-effect waves-light #64b5f6 blue darken-1" 
             onClick={()=>PostData()}
