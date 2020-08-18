@@ -2,14 +2,14 @@ import React,{useEffect,createContext,useReducer,useContext} from 'react';
 import Navbar from './components/Navbar';
 import "./App.css";
 import { BrowserRouter, Route , Switch , useHistory } from 'react-router-dom';
-import Home from './components/screen/Home';
-import Signin from './components/screen/SignIn';
-import Profile from './components/screen/Profile';
-import Signup from './components/screen/Signup';
-import CreatePost from './components/screen/CreatePost';
-import UserProfile from './components/screen/UserProfile';
+import Home from './components/Home';
+import Signin from './components/SignIn';
+import Profile from './components/Profile';
+import Signup from './components/Signup';
+import CreatePost from './components/CreatePost';
+import UserProfile from './components/UserProfile';
 import {reducer,initialState} from './reducers/userReducer';
-import Allfollowpost from './components/screen/Allfollowpost'
+import Allfollowpost from './components/Allfollowpost'
 
 export const UserContext = createContext()
 
