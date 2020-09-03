@@ -1,4 +1,5 @@
-## Hey there!!! This frontend part of my App is done using React . For styling purposes I have used materialize css and few google fonts as well !!I have tried my best to give this UI a very identical flavour to the original instagram website .
+## Hey there!!! 
+This frontend part of my App is done using React . For styling purposes I have used materialize css and few google fonts as well !!I have tried my best to give this UI a very identical flavour to the original instagram website .
 ## Some salient features
 ### SignIn and SignUp pages 
 There is a basic landing page that is my Login page , you can always navigate to the signup screen pretty much similar to Instagram .
