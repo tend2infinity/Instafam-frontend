@@ -6,7 +6,7 @@ There is a basic landing page that is my Login page , you can always navigate to
 ### Home page 
 After logging in you will see a home screen and you can view all the posts there .
 ### Navbar
-The navbar at the top contains a home icon and other options like create post , my following posts , my profile , all of these are pretty much self expplanatory .
+The navbar at the top contains a home icon and other options like create post , my following posts , my profile , all of these are pretty much self explanatory .
 ### Delete post
 The delete post button is also availabe on the posts posted by you . 
 ### Search functionality
